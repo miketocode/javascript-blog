@@ -34,8 +34,54 @@ const titleClickHandler = function(event){
   targetArticle.classList.add('active');
 };
 
-const links = document.querySelectorAll('.titles a');
 
-for(let link of links){
-  link.addEventListener('click', titleClickHandler);
+
+// 5.4. Generowanie listy tytułów
+
+const optArticleSelector = '.post',
+  optTitleSelector = '.post-title',
+  optTitleListSelector = '.titles';
+
+function generateTitleLinks(){
+
+  /* remove contents of titleList */
+  const titleList = document.querySelector(optTitleListSelector);
+  console.log(titleList);
+
+  titleList.innerHTML = '';
+
+  /* for each article */
+  const articles = document.querySelectorAll(optArticleSelector);
+  let html = '';
+  for(let article of articles) {
+    article.querySelector(optArticleSelector);
+    /* get the article id */
+    const articleId = article.getAttribute('id');
+
+    /* find the title element */
+    /* get the title from the title element */
+    const articleTitle = article.querySelector(optTitleSelector).innerHTML;
+
+    /* create HTML of the link */
+    const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
+    console.log(linkHTML);
+    
+
+    /* insert link into titleList */
+    html = html + linkHTML;
+    console.log('html');
+
+  }
+    // const innerHTML = document.getElementById('article-1');
+    // innerHTML.insertAdjacentHTML('afterend', '<h3 class="post-title">Article 1</h3>');
+
+    titleList.innerHTML = html;
+    
+    const links = document.querySelectorAll('.titles a');
+    console.log('links');
+    for(let link of links){
+      link.addEventListener('click', titleClickHandler);
+    }
 }
+
+generateTitleLinks();
