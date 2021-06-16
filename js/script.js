@@ -59,7 +59,7 @@ function generateTitleLinks(){
     const articleId = article.getAttribute('id');
 
     /* find the title element */
-    /* get the title from the title element */
+    /* ?? get the title from the title element */
     const articleTitle = article.querySelector(optTitleSelector).innerHTML;
 
     /* create HTML of the link */
@@ -76,7 +76,7 @@ function generateTitleLinks(){
     // innerHTML.insertAdjacentHTML('afterend', '<h3 class="post-title">Article 1</h3>');
 
     titleList.innerHTML = html;
-    
+
     const links = document.querySelectorAll('.titles a');
     console.log('links');
     for(let link of links){
