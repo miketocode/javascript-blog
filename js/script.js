@@ -13,7 +13,7 @@ const optArticleSelector = '.post',
   optTitleListSelector = '.titles',
   optArticleTagsSelector = '.post-tags .list',
   optArticleAuthorSelector = '.post-author',
-  optTagsListSelector = '.tags.list',
+  // optTagsListSelector = '.tags.list',
   optCloudClassCount = 5,
   optCloudClassPrefix = 'tag-size-',
   optAuthorsListSelector = '.authors.list',
@@ -382,7 +382,7 @@ const authorClickHandler = function (event) {
 }
 
 
-const addClickListenersToAuthors = function () {
+function addClickListenersToAuthors() {
   console.log(addClickListenersToAuthors);
 
   /* find all links to Authors */
@@ -398,4 +398,5 @@ const addClickListenersToAuthors = function () {
   }
 
   addClickListenersToAuthors();
+
 }
